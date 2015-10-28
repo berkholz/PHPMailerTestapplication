@@ -4,9 +4,9 @@ Little HTML and PHP web application to test sending mails from a webserver witho
 You can define the following settings in the form:
 * TO - receipient
 * FROM - sending from
-* mailserver - server to send to 
-* subject - text of the mails subject
-* messagetext - text of the message
+* MAILSERVER - server to send to 
+* SUBJECT - text of the mails subject
+* MESSAGE - text of the message
  
 You can load default values by clicking the "Load defaults" button. To change these default values you can edit the mail-config.php file.
 
