@@ -8,5 +8,5 @@ You can define the following settings in the form:
 * subject - text of the mails subject
 * messagetext - text of the message
  
-You can load default values by clicking the "Load default" button. To change these default values youcan edit the mail-config.php file.
+You can load default values by clicking the "Load defaults" button. To change these default values youcan edit the mail-config.php file.
 
