@@ -24,8 +24,8 @@ if ($_REQUEST['SUBJECT']){
 		$mail->Subject = $_REQUEST['SUBJECT'];
 }
 
-$mail->WordWrap = 50;                                 // set word wrap to 50 characters
-$mail->IsHTML(false);                                  // set email format to HTML
+$mail->WordWrap = 50;                   
+$mail->IsHTML(false);                  
 
 if ($_REQUEST['MESSAGE']){
 	$mail->Body    = $_REQUEST['MESSAGE'];
