@@ -10,3 +10,6 @@ You can define the following settings in the form:
  
 You can load default values by clicking the "Load defaults" button. To change these default values you can edit the mail-config.php file.
 
+## Installation
+ + You first need the <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>. Download and extract it where you want. 
+ + Copy than the *class.phpmailer.php* to the same directory where the PHPMailerTestapplication is and you're done.
