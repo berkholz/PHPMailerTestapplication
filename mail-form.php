@@ -44,7 +44,7 @@ include "mail-config.php";
 			Message:<br />
 			<textarea name="MESSAGE" id="MESSAGE" rows="15" cols="46"><?php echo $_REQUEST['MESSAGE']; ?> </textarea><br />
 	
-			Verify SSL-Cert: <input name="SSL_VERIFY" id="SSL_VERIFY" type="checkbox" value="<?php if(isset($_REQUEST['SSL_VERIFY'])) {echo $_REQUEST['SSL_VERIFY'];} ?>">
+			Disable verification of SSL certificate: <input name="SSL_VERIFY" id="SSL_VERIFY" type="checkbox" value="<?php if(isset($_REQUEST['SSL_VERIFY'])) {echo $_REQUEST['SSL_VERIFY'];} ?>">
 			</p>
 			<input type="submit" value="Submit" />
 			<button type="reset" >Reset</button>
