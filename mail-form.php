@@ -15,7 +15,7 @@ include "mail-config.php";
 			document.getElementById("FROM").value = ""; 
 			document.getElementById("MESSAGE").value = ""; 
 			document.getElementById("SUBJECT").value = ""; 
-			document.getElementById("SSL_VERIFY").value = ""; 
+			document.getElementById("SSL_NOVERIFY").checked = false; 
 		} 
 
 		function default_inputs () { 
@@ -24,7 +24,7 @@ include "mail-config.php";
 			document.getElementById("FROM").value = "<?php echo $FROM_TEMPLATE; ?>";
 			document.getElementById("SUBJECT").value = "<?php echo $SUBJECT_TEMPLATE; ?>";
 			document.getElementById("MESSAGE").value = "<?php echo $MESSAGE_TEMPLATE; ?>";
-			document.getElementById("SSL_VERIFY").value = "<?php echo $SSL_VERIFY_TEMPLATE; ?>";
+			document.getElementById("SSL_NOVERIFY").checked = <?php echo $SSL_NOVERIFY_CHECKED; ?>;
 		} 
 
 		</script>
@@ -44,7 +44,9 @@ include "mail-config.php";
 			Message:<br />
 			<textarea name="MESSAGE" id="MESSAGE" rows="15" cols="46"><?php echo $_REQUEST['MESSAGE']; ?> </textarea><br />
 	
-			Disable verification of SSL certificate: <input name="SSL_VERIFY" id="SSL_VERIFY" type="checkbox" value="<?php if(isset($_REQUEST['SSL_VERIFY'])) {echo $_REQUEST['SSL_VERIFY'];} ?>">
+			Disable verification of SSL certificates: 
+			<input name="SSL_NOVERIFY" id="SSL_NOVERIFY" type="checkbox" value="on" <?php if(isset($_REQUEST['SSL_NOVERIFY'])) { if ($_REQUEST['SSL_NOVERIFY'] == "on") {echo "checked"; }} ?> >
+
 			</p>
 			<input type="submit" value="Submit" />
 			<button type="reset" >Reset</button>
