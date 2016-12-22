@@ -15,6 +15,7 @@ include "mail-config.php";
 			document.getElementById("FROM").value = ""; 
 			document.getElementById("MESSAGE").value = ""; 
 			document.getElementById("SUBJECT").value = ""; 
+			document.getElementById("SSL_VERIFY").value = ""; 
 		} 
 
 		function default_inputs () { 
@@ -23,6 +24,7 @@ include "mail-config.php";
 			document.getElementById("FROM").value = "<?php echo $FROM_TEMPLATE; ?>";
 			document.getElementById("SUBJECT").value = "<?php echo $SUBJECT_TEMPLATE; ?>";
 			document.getElementById("MESSAGE").value = "<?php echo $MESSAGE_TEMPLATE; ?>";
+			document.getElementById("SSL_VERIFY").value = "<?php echo $SSL_VERIFY_TEMPLATE; ?>";
 		} 
 
 		</script>
@@ -41,6 +43,8 @@ include "mail-config.php";
 			
 			Message:<br />
 			<textarea name="MESSAGE" id="MESSAGE" rows="15" cols="46"><?php echo $_REQUEST['MESSAGE']; ?> </textarea><br />
+	
+			Verify SSL-Cert: <input name="SSL_VERIFY" id="SSL_VERIFY" type="checkbox" value="<?php if(isset($_REQUEST['SSL_VERIFY'])) {echo $_REQUEST['SSL_VERIFY'];} ?>">
 			</p>
 			<input type="submit" value="Submit" />
 			<button type="reset" >Reset</button>

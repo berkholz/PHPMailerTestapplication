@@ -8,6 +8,17 @@ $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->Host = "localhost";  
 $mail->SMTPAuth = false;   
+$mail->SMTPDebug = 3;
+
+if (isset($_REQUEST['SSL_VERIFY'])){
+	$mail->SMTPOptions = array(
+	    'ssl' => array(
+	        'verify_peer' => false,
+	        'verify_peer_name' => false,
+	        'allow_self_signed' => true
+	    )
+	);
+}
 
 if ($_REQUEST['MAILSERVER']){
 	$mail->Host = $_REQUEST['MAILSERVER'];
@@ -56,6 +67,7 @@ if(!$mail->Send()) {
 			<input name="TO" id="TO" type="hidden" value="<?php echo $_REQUEST['TO']; ?>" /><br />
 	                <input name="SUBJECT" size="60" id="SUBJECT" type="hidden" value="<?php echo $_REQUEST['SUBJECT']; ?>" /><br />
 			<input name="MESSAGE" id="MESSAGE" type="hidden" value="<?php echo $_REQUEST['MESSAGE']; ?>"><br />
+			<input name="SSL_VERIFY" id="SSL_VERIFY" type="hidden" value="<?php if (isset($_REQUEST['SSL_VERIFY'])){echo $_REQUEST['SSL_VERIFY'];} ?>"><br />
 			<input type="submit" value="Neue Mail versenden" />
 		</form>
 				
