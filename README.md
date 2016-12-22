@@ -36,4 +36,4 @@ Because it's a PHP webapplication you need a **webserver with PHP**.
  + And you're done.
 
 ## Troubleshooting
-For troubleshooting take a look at you apache's errorlog, e.g. /var/log/apache2/error.log.
+For troubleshooting take a look at your apache's errorlog, e.g. /var/log/apache2/error.log.
